@@ -1,6 +1,7 @@
 import "./assets/main.css";
 import React, { useState, useEffect } from "react";
-import TextField from "@mui/material/TextField";
+import Stack from "@mui/material/Stack";
+import Button from "@mui/material/Button";
 
 function App() {
   const [dailyRate, setDailyRate] = useState(0);
@@ -57,11 +58,6 @@ function App() {
           parseFloat(dailyRatePay * absence)
       ),
       setBunos(bunosGet),
-      setGrossIncome(
-        parseFloat(bunosGet) +
-          parseFloat(totalEarnings) -
-          parseFloat(totalDeduction)
-      ),
       500
     );
 
@@ -85,7 +81,9 @@ function App() {
 
   const triggerGrossIncome = () => {
     setGrossIncome(
-      parseFloat(bunos) + parseFloat(totalEarnings) - parseFloat(totalDeduction)
+      parseFloat(bunosGet) +
+        parseFloat(totalEarnings) -
+        parseFloat(totalDeduction)
     );
   };
 
@@ -235,194 +233,15 @@ function App() {
               {totalDeduction.toLocaleString()}
             </span>
           </div>
+          <Button variant="outlined" onClick={triggerGrossIncome}>
+            Calculate
+          </Button>
           <div className="totalgrossincome">
             <h3 className="total">TOTAL GROSS INCOME: </h3>
             <span>{grossIncome.toLocaleString()}</span>
           </div>
         </div>
       </section>
-
-      {/* <table cellPadding="5" cellSpacing="5">
-        <thead>
-          <tr>
-            <th colSpan="3">NET INCOME</th>
-            <th></th>
-            <th></th>
-            <th></th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Daily Rate:</td>
-            <td>
-              <input
-                type="number"
-                name="dailyrate"
-                id="dailyrate"
-                placeholder="Daily Rate"
-                value={dailyRatePay}
-                onChange={(e) => getDailyRatePay(e.target.value)}
-              />
-            </td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td>Semi-Monthly Rate</td>
-            <td>
-              <input
-                type="number"
-                name="semimonthly"
-                id="semimonthly"
-                value={semiMonthlyRatePay}
-                onChange={(e) => getSemiMohtlyRatePay(e.target.value)}
-              />
-            </td>
-            <td></td>
-            <td></td>
-          </tr>
-          <br />
-          <tr>
-            <td>Hourly Rate</td>
-            <td>{hourlyrate.toLocaleString()}</td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td>Rate Per Minute</td>
-            <td>{ratePerMinute.toLocaleString()}</td>
-            <td></td>
-          </tr>
-          <br />
-          <tr>
-            <td>Regular Holiday</td>
-            <td>
-              <input
-                type="number"
-                name="regularHoliday"
-                id="regularHoliday"
-                value={regularHoliday}
-                onChange={(e) => setregularHoliday(e.target.value)}
-                placeholder="regular Holiday"
-              />
-            </td>
-            <td>{holidayPay.toLocaleString()}</td>
-          </tr>
-          <tr>
-            <td>Special Holiday</td>
-            <td>
-              <input
-                type="number"
-                name="specialholiday"
-                id="specialholiday"
-                value={specialHoliday}
-                onChange={(e) => setSpecialHoliday(e.target.value)}
-              />
-            </td>
-            <td>{specialHolidayPay.toLocaleString()}</td>
-          </tr>
-          <tr>
-            <td>Night Diff (Hours)</td>
-            <td>
-              <input
-                type="number"
-                name="nightdiff"
-                id="nightdiff"
-                value={nightDiff}
-                onChange={(e) => setNightDiff(e.target.value)}
-              />
-            </td>
-            <td>{calculateNightDiff.toLocaleString()}</td>
-          </tr>
-          <tr>
-            <td>OverTime</td>
-            <td>
-              <input
-                type="number"
-                name="ot"
-                id="ot"
-                value={overTime}
-                onChange={(e) => setOverTime(e.target.value)}
-              />
-            </td>
-            <td>{calculateOverTime.toLocaleString()}</td>
-          </tr>
-          <br />
-          <tr>
-            <td>Total</td>
-            <td colSpan="3" style={{ textAlign: "right" }}>
-              {totalEarnings.toLocaleString()}
-            </td>
-          </tr>
-          <br />
-          <hr />
-          <tr>
-            <td colSpan="3">DEDUCTIONS</td>
-          </tr>
-          <br />
-          <tr>
-            <td>Tardy (Minutes)</td>
-            <td>
-              <input
-                type="number"
-                name="tardy"
-                id="tardy"
-                onChange={(e) => setTardy(e.target.value)}
-              />
-            </td>
-            <td>{tardyDeduct.toLocaleString()}</td>
-          </tr>
-          <tr>
-            <td>Undertime + VTO (Minutes)</td>
-            <td>
-              <input
-                type="number"
-                name="undertime"
-                id="undertime"
-                onChange={(e) => setUnderTime(e.target.value)}
-              />
-            </td>
-            <td>{underTimeDeduct.toLocaleString()}</td>
-          </tr>
-          <tr>
-            <td>Absences</td>
-            <td>
-              <input
-                type="number"
-                name="absence"
-                id="absence"
-                onChange={(e) => setAbsence(e.target.value)}
-              />
-            </td>
-            <td>{absenceDeduct}</td>
-          </tr>
-          <br />
-          <tr>
-            <td>TOTAL</td>
-            <td colSpan="3">{totalDeduction.toLocaleString()}</td>
-          </tr>
-          <br />
-          <tr>
-            <td>BONUS</td>
-            <td>
-              <input
-                type="number"
-                name="bunos"
-                id="bunos"
-                onChange={(e) => setBunos(e.target.value)}
-              />
-            </td>
-          </tr>
-          <br />
-          <tr>
-            <td>GROSS INCOME</td>
-            <td>{grossIncome.toLocaleString()}</td>
-            <td>
-              <button onClick={triggerGrossIncome}>CALCULATE</button>
-            </td>
-          </tr>
-        </tbody>
-      </table> */}
     </div>
   );
 }

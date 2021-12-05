@@ -1,7 +1,7 @@
 {
-  "homepage": "http://davecanucot.github.io/Nin-Payroll",
+
   "name": "payroll-calcu",
-  "version": "0.1.0",
+  "version": "0.1.5",
   "private": true,
   "dependencies": {
     "@emotion/react": "^11.7.0",
@@ -16,7 +16,11 @@
     "react-scripts": "^3.4.4",
     "web-vitals": "^1.0.1"
   },
+
+  "homepage": "http://davecanucot.github.io/Nin-Payroll",
   "scripts": {
+    "pre-deploy":"npm run build",
+    "deploy":"gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
