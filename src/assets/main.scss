@@ -1,0 +1,16 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+table {
+  border: 1px solid;
+  border-radius: 25px;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  margin: 5rem auto;
+  max-width: 768px;
+  justify-content: space-between;
+  border-collapse: collapse;
+}
