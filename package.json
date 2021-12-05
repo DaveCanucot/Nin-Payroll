@@ -1,5 +1,5 @@
 {
-
+  "homepage": ".",
   "name": "payroll-calcu",
   "version": "0.1.5",
   "private": true,
@@ -17,7 +17,7 @@
     "web-vitals": "^1.0.1"
   },
 
-  "homepage": "http://davecanucot.github.io/Nin-Payroll",
+
   "scripts": {
     "pre-deploy":"npm run build",
     "deploy":"gh-pages -d build",
