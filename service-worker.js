@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/Nin-Payroll/precache-manifest.d4e5a24342bff9c1d809610ced5d5c89.js"
+  "/Nin-Payroll/precache-manifest.6cb2f3a78c3787eff08acaabb11b667b.js"
 );
 
 self.addEventListener('message', (event) => {
