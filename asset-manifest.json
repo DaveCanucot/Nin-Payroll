@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/Nin-Payroll/static/css/main.5d9dac51.chunk.css",
+    "main.js": "/Nin-Payroll/static/js/main.3de2aaed.chunk.js",
+    "main.js.map": "/Nin-Payroll/static/js/main.3de2aaed.chunk.js.map",
+    "runtime-main.js": "/Nin-Payroll/static/js/runtime-main.604b7f5d.js",
+    "runtime-main.js.map": "/Nin-Payroll/static/js/runtime-main.604b7f5d.js.map",
+    "static/js/2.13fcbca7.chunk.js": "/Nin-Payroll/static/js/2.13fcbca7.chunk.js",
+    "static/js/2.13fcbca7.chunk.js.map": "/Nin-Payroll/static/js/2.13fcbca7.chunk.js.map",
+    "index.html": "/Nin-Payroll/index.html",
+    "precache-manifest.d4e5a24342bff9c1d809610ced5d5c89.js": "/Nin-Payroll/precache-manifest.d4e5a24342bff9c1d809610ced5d5c89.js",
+    "service-worker.js": "/Nin-Payroll/service-worker.js",
+    "static/css/main.5d9dac51.chunk.css.map": "/Nin-Payroll/static/css/main.5d9dac51.chunk.css.map",
+    "static/js/2.13fcbca7.chunk.js.LICENSE.txt": "/Nin-Payroll/static/js/2.13fcbca7.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.604b7f5d.js",
+    "static/js/2.13fcbca7.chunk.js",
+    "static/css/main.5d9dac51.chunk.css",
+    "static/js/main.3de2aaed.chunk.js"
+  ]
+}
