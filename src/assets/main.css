@@ -1,0 +1,90 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: #aaa;
+}
+
+section {
+  display: flex;
+  max-width: 1440px;
+  background-color: #fff;
+  border-radius: 25px;
+  padding: 20px;
+  margin: 10rem auto;
+  justify-content: space-evenly;
+}
+.netincome,
+.deductions,
+.grossincome {
+  display: flex;
+  flex-direction: column;
+  width: 32%;
+  border: 1px solid;
+  border-radius: 25px;
+  padding: 20px;
+}
+
+.dailyrate,
+.semimonthlyrate,
+.hourlyrate,
+.minuterate,
+.holiday,
+.specialholiday,
+.nightdiff,
+.overtime,
+.totalnetincome,
+.tardy,
+.undertime,
+.absence,
+.totaldeduction,
+.bunos,
+.totalgrossincome {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+.deductotal {
+  color: red;
+}
+span {
+  font-weight: 700;
+  color: green;
+}
+input {
+  width: 45%;
+}
+label {
+  width: 40%;
+}
+p {
+  width: 15%;
+  text-align: end;
+}
+.minus {
+  color: #000;
+  text-align: end;
+  font-size: 2rem;
+  font-weight: 700;
+  align-content: center;
+  margin-bottom: 1rem;
+}
+.title {
+  margin-bottom: 1rem;
+}
+@media screen and (max-width: 768px) {
+  section {
+    flex-direction: column;
+  }
+  .netincome,
+  .deductions,
+  .grossincome {
+    width: 100%;
+    margin-bottom: 2rem;
+  }
+}
+/*# sourceMappingURL=main.css.map */
